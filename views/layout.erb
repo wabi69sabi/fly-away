@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>Flight Trip Calculator</title>
+
+    <!-- this Favicon was found at https://commons.wikimedia.org/wiki/File:Airplane_GA_Black.svg and is Free -->
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Airplane_GA_Black.svg/1024px-Airplane_GA_Black.svg.png"/>
+  </head>
+  <body>
+    <div class="panel panel-default">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#thisLinkDoesNothing">Fancy Flight trip Calculator</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/instructions">Instructions</a></li>
+            <li><a href="/index">Index</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class="container centered">
+        <%= yield %>
+      </div>
+      <style type="text/css">
+        .container {
+          height: 100%;
+        }
+        #footer {
+          height: 100px;
+        }
+      </style>
+
+
+      <div class="panel-footer" id="footer">
+        <footer class="site-footer">
+          <p>Created by: WabiSabi</p>
+          <p class="pull-right">
+            And because including stylesheets in Sinatra takes getting used to.. <br>
+            ... now there is this great floating footer
+          </p>
+          <p>Contact information: <a href="mailto:wabisabisf@gmail.com">
+          wabisabisf@gmail.com</a>.</p>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>

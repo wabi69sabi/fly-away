@@ -1,0 +1,37 @@
+<h2>
+  Travel Destinations:
+</h2>
+
+<% @h.each do |k, v| %>
+  <p>
+    <%= "#{k.to_s.upcase} is located at #{v.ll} in #{v.city}, #{v.state_code}" %>
+  </p>
+<% end %>
+
+<h3>
+  Possible trips:
+</h3>
+
+<p>
+  This is a combination of all possible trips:
+</p>
+
+<% hashed_ports = {} %>
+<% @ports.combination(2).to_a.each do |p| %>
+  <% hashed_ports["#{p.first.upcase} to #{p.last.upcase}"] = (@h[:"#{p.first}"].distance_to(@h[:"#{p.last}"])).round(2) %>
+<% end %>
+
+<% hashed_ports.each do |k, v| %>
+  <p>
+    <%= "#{k.to_s} distance: #{v.to_s} miles" %>
+  </p>
+<% end %>
+
+<h3>
+  Longest travel distance:
+</h3>
+
+<% max = hashed_ports.max_by{|k,v| v} %>
+<p>
+  <%= "#{max[0]} #{max[1]} miles" %>
+</p>
