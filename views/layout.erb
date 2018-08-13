@@ -14,6 +14,8 @@
 
     <!-- this Favicon was found at https://commons.wikimedia.org/wiki/File:Airplane_GA_Black.svg and is Free -->
     <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Airplane_GA_Black.svg/1024px-Airplane_GA_Black.svg.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
     <div class="panel panel-default">
@@ -30,19 +32,9 @@
         </div>
       </nav>
 
-
       <div class="container centered">
         <%= yield %>
       </div>
-      <style type="text/css">
-        .container {
-          height: 100%;
-        }
-        #footer {
-          height: 100px;
-        }
-      </style>
-
 
       <div class="panel-footer" id="footer">
         <footer class="site-footer">
