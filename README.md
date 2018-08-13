@@ -25,3 +25,7 @@ Alternatively, once the app has started, you can also send requests via curl or 
 
 ``` 127.0.0.1:4567 ``` --> will return the landing page in raw HTML format
 ``` 127.0.0.1:4567/instructions/<a list of airport codes seperated by %20>``` --> returns distances between all possible airport combinations and max distance
+
+### Testing
+
+Currently working on unit testing. And cleaning Git history.

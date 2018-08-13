@@ -6,3 +6,6 @@ gem 'sinatra', require: 'sinatra/base'
 
 # the geokit gem which allows us to connect to the Google maps API
 gem 'geokit'
+
+# for unit testing
+gem 'rspec'
