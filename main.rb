@@ -1,5 +1,3 @@
-require 'sinatra'
-require 'geokit'
 require 'erb'
 
 Geokit::Geocoders::GoogleGeocoder.api_key = ''
@@ -9,6 +7,10 @@ class App < Sinatra::Base
   configure do
     # you can also have dynamic settings with blocks
     set(:css_dir) { File.join(views, 'css') }
+  end
+
+  configure :development do
+    register Sinatra::Reloader
   end
 
   get '/' do

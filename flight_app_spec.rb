@@ -1,6 +1,5 @@
 require 'rack/test'
 require 'spec_helper'
-require 'pry-byebug'
 
 describe 'Sinatra App' do
   let(:app) { App.new }
