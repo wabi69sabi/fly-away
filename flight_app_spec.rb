@@ -18,4 +18,9 @@ describe 'Sinatra App' do
     end
   end
 
+  it 'should take a json payload' do
+    post "/json-response", todo: { priority: 1, task: 'Get rich quick' }
+    expect(last_response).to be_ok
+  end
+
 end

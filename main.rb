@@ -39,4 +39,7 @@ class App < Sinatra::Base
     erb :index
   end
 
+  post '/json-response' do
+    puts params
+  end
 end
