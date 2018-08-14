@@ -40,6 +40,6 @@ class App < Sinatra::Base
   end
 
   post '/json-response' do
-    puts params
+    request.params.to_json
   end
 end
