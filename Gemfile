@@ -9,3 +9,5 @@ gem 'geokit'
 
 # for unit testing
 gem 'rspec'
+gem 'rack-test'
+gem 'pry-byebug'
