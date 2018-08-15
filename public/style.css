@@ -10,3 +10,8 @@ footer {
   height: 100px;
   padding-top: 10px;
 }
+
+/* bootstrap override */
+.panel {
+  margin-bottom: 0px;
+}
