@@ -5,8 +5,8 @@ Geokit::Geocoders::GoogleGeocoder.api_key = ''
 class App < Sinatra::Base
 
   configure do
-    # you can also have dynamic settings with blocks
-    set(:css_dir) { File.join(views, 'css') }
+    # redundant as this is the default, done for demonstration
+    set(:css_dir) { File.join(root, 'public') }
   end
 
   configure :development do
