@@ -28,7 +28,11 @@ class App < Sinatra::Base
 
     @h = {}
     @ports.each do |x|
-      @h[:"#{x}"] = Geokit::Geocoders::GoogleGeocoder.geocode x + ", airport"
+      begin
+        @h[:"#{x}"] = Geokit::Geocoders::GoogleGeocoder.geocode x + ", airport"
+      rescue
+        return erb :error
+      end
     end
 
     erb :flights
