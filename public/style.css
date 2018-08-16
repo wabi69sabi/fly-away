@@ -15,3 +15,7 @@ footer {
 .panel {
   margin-bottom: 0px;
 }
+
+.navbar {
+  border-radius: 0px;
+}
