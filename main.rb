@@ -46,4 +46,8 @@ class App < Sinatra::Base
   post '/json-response' do
     request.params.to_json
   end
+
+  get '/json/:ports' do
+    params.to_json
+  end
 end
