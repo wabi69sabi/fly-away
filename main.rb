@@ -38,6 +38,42 @@ class App < Sinatra::Base
     erb :flights
   end
 
+  get '/coding' do
+    erb :coding
+  end
+
+  post '/coding' do
+    array = params['input'].split(',').map {|n| n.to_i}
+
+    def sell_coins(input)
+      a = split_em(input)
+      o = [a.first]
+
+      until o.flatten.last == input.last
+        a = split_em(a.last)
+        o << a.first
+      end
+
+      # just to see the created split array uncomment next line
+      # return o
+      return_max(o)
+    end
+
+    def split_em(array)
+      array.slice_after(array.max).to_a
+    end
+
+    def return_max(totals)
+      res = []
+      totals.each {|a| res << a.max - a.min}
+      return res.max
+    end
+
+    @res = sell_coins(array)
+
+    erb :array
+  end
+
   get '/index' do
     @ind = 'index of pages'
     erb :index
