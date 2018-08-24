@@ -19,15 +19,19 @@
 <ul>
   <li>
     <h4>US airport codes</h4>
-    <p>BHM --> Birmingham</p>
-    <p>ANC --> Anchorage</p>
-    <p>PHX --> Phoenix</p>
-    <p>OAK --> Oakland</p>
-    <p>DEN --> Denver</p>
-    <p>ATL --> Atlanta</p>
-    <p>HNL --> Honolulu</p>
-    <p>ALB --> Albany</p>
-    <p>BTV --> Burlington</p>
+    <% us_ports = {'BHM' => 'Birmingham',
+      'ANC' => 'Anchorage',
+      'PHX' => 'Phoenix',
+      'OAK' => 'Oakland',
+      'DEN' => 'Denver',
+      'ATL' => 'Atlanta',
+      'HNL' => 'Honolulu',
+      'ALB' => 'Albany',
+      'BTV' => 'Burlington'
+      }%>
+    <% us_ports.each do |k, v| %>
+      <p> <%= "#{k} --> #{v}"%> </p>
+    <% end %>
   </li>
   <li>
     <h4>European airport codes</h4>
