@@ -55,7 +55,7 @@ class App < Sinatra::Base
       end
 
       # just to see the created split array uncomment next line
-      # return o
+      @split_array = o
       return_max(o)
     end
 
