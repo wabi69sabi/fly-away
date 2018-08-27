@@ -35,14 +35,22 @@
   </li>
   <li>
     <h4>European airport codes</h4>
-    <p>TXL --> Berlin, Germany</p>
-    <p>LON --> London, United Kingdom</p>
-    <p>ROM --> Rome, Italy</p>
+    <% eu_ports = {'TXL' => 'Berlin, Germany',
+      'LON' => 'London, United Kingdom',
+      'ROM' => 'Rome, Italy'
+    }%>
+    <% eu_ports.each do |k, v| %>
+      <p> <%= "#{k} --> #{v}"%> </p>
+    <% end %>
   </li>
   <li>
     <h4>Asian airport codes</h4>
-    <p>JKT --> Jakarta, Indonesia</p>
-    <p>HND --> Haneda Airport, Tokyo, Japan</p>
-    <p>BKK --> Bangkok, Thailand</p>
+    <% ai_ports = { 'JKT' => 'Jakarta, Indonesia',
+      'HND' => 'Haneda Airport, Tokyo, Japan',
+      'BKK' => 'Bangkok, Thailand'
+    }%>
+    <% ai_ports.each do |k, v| %>
+      <p> <%= "#{k} --> #{v}"%> </p>
+    <% end %>
   </li>
 </ul>
