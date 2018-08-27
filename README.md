@@ -8,7 +8,7 @@ This is a very small Sinatra application that runs with minimal overhead and con
 
 In order to run this application you need a working ruby version of ruby 2.3.1 or above. Additionally:
 - bundler version 1.16.1 or higher
-- A working Google maps API key (I could provide one via email if absolutely necessary)
+- A working Google maps API key
 
 ### Installation
 
