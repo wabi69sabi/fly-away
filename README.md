@@ -33,3 +33,9 @@ Currently working on unit testing. And cleaning Git history.
 RSpecs can be run with this command:
 
 - ``` rspec -I . flight_app_spec.rb ```
+
+### Sending JSON requests
+
+It is possible to send JSON requests to various endpoints. One example that can be tested with curl:
+
+``` curl --data "input=10,20,30,2,19,10,20,29" 127.0.0.1:1111/coding ```
