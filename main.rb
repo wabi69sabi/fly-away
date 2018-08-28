@@ -1,4 +1,5 @@
 require 'erb'
+require 'json'
 
 Geokit::Geocoders::GoogleGeocoder.api_key = ''
 
@@ -72,6 +73,9 @@ class App < Sinatra::Base
     @res = sell_coins(array)
 
     erb :array
+
+    res = {'result' => @res, 'array' => @split_array}
+    for_json = res.to_json
   end
 
   get '/index' do
