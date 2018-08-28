@@ -1,5 +1,4 @@
 require 'erb'
-require 'json'
 
 Geokit::Geocoders::GoogleGeocoder.api_key = ''
 
