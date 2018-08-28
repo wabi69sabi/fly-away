@@ -84,6 +84,6 @@ class App < Sinatra::Base
   end
 
   get '/json/:ports' do
-    params.to_json
+    params[:ports].split(' ').map! {|p| p + ' airport'}.to_json
   end
 end
