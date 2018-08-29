@@ -43,3 +43,7 @@ It is possible to send JSON requests to various endpoints. One example that can 
 Another on that will return some Google maps API data is:
 
 - ``` curl 127.0.0.1:4567/instructions/txl%20alb ```
+
+*** Needs fixing ****
+
+Currently sinatra's respond_to method does not seem to be working, so requests cannot be differentiated between HTML and JSON. This needs a solution!!!!
