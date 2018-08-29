@@ -38,4 +38,8 @@ RSpecs can be run with this command:
 
 It is possible to send JSON requests to various endpoints. One example that can be tested with curl:
 
-``` curl --data "input=10,20,30,2,19,10,20,29" 127.0.0.1:1111/coding ```
+- ``` curl --data "input=10,20,30,2,19,10,20,29" 127.0.0.1:4567/coding ```
+
+Another on that will return some Google maps API data is:
+
+- ``` curl 127.0.0.1:4567/instructions/txl%20alb ```

@@ -36,6 +36,9 @@ class App < Sinatra::Base
     end
 
     erb :flights
+
+    res = {'ports' => @h}
+    for_json = res.to_json
   end
 
   get '/coding' do
