@@ -47,3 +47,7 @@ Another on that will return some Google maps API data is:
 *** Needs fixing ****
 
 Currently sinatra's respond_to method does not seem to be working, so requests cannot be differentiated between HTML and JSON. This needs a solution!!!!
+
+A possible work around could be route seperation or requiring to add a .json flag to JSON calls.
+
+Classes also need to be outsourced and a db might be a good idea.
