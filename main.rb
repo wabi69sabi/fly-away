@@ -48,36 +48,13 @@ class App < Sinatra::Base
   post '/coding' do
     array = params['input'].split(',').map {|n| n.to_i}
 
-    def sell_coins(input)
-      a = split_em(input)
-      o = [a.first]
-
-      until o.flatten.last == input.last
-        a = split_em(a.last)
-        o << a.first
-      end
-
-      # just to see the created split array uncomment next line
-      @split_array = o
-      return_max(o)
-    end
-
-    def split_em(array)
-      array.slice_after(array.max).to_a
-    end
-
-    def return_max(totals)
-      res = []
-      totals.each {|a| res << a.max - a.min}
-      return res.max
-    end
-
-    @res = sell_coins(array)
+    @res = Split.sell_coins(array)
+    @split_array = Split.return_array
 
     erb :array
 
-    res = {'result' => @res, 'array' => @split_array}
-    for_json = res.to_json
+    # res = {'result' => @res, 'array' => @split_array}
+    # for_json = res.to_json
   end
 
   get '/index' do
