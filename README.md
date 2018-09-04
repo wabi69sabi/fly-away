@@ -50,4 +50,6 @@ Currently sinatra's respond_to method does not seem to be working, so requests c
 
 A possible work around could be route seperation or requiring to add a .json flag to JSON calls.
 
-Classes also need to be outsourced and a db might be a good idea.
+Another workaround would be a fancy filter and requiring to add .json flag to calls.
+
+Classes are now in the model folder, but a db with active record and SQLite would be a nice addition.
