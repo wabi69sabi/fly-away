@@ -22,23 +22,19 @@ class App < Sinatra::Base
   end
 
   get '/instructions/:port' do
-    @ports = params[:port].split(' ')
-    # cleaning input
-    @ports.map!{|x| x.upcase.strip}
+    string = params[:port]
 
-    @h = {}
-    @ports.each do |x|
-      begin
-        @h[:"#{x}"] = Geokit::Geocoders::GoogleGeocoder.geocode x + ", airport"
-      rescue
-        return erb :error
-      end
+    @new_hash = Ports.hash_ports(string.split(' ').map!{|x| x.upcase.strip})
+
+    res = {'ports' => @new_hash}
+    # for_json = res.to_json
+
+    unless @new_hash == 'error'
+      for_json = res.to_json
+      erb :flights
+    else
+      erb :error
     end
-
-    erb :flights
-
-    res = {'ports' => @h}
-    for_json = res.to_json
   end
 
   get '/coding' do
