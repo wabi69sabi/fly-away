@@ -25,6 +25,8 @@ class App < Sinatra::Base
     string = params[:port]
 
     @new_hash = Ports.hash_ports(string.split(' ').map!{|x| x.upcase.strip})
+    @distances = Ports.get_distances(@new_hash)
+    @max = @distances.max_by{|k,v| v}
 
     res = {'ports' => @new_hash}
     # for_json = res.to_json
