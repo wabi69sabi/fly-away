@@ -1,5 +1,9 @@
 class Ports
   def self.hash_ports(array)
-    array.each_with_object({}) { |str, hsh| hsh[str] = "#{str}, airport" }
+    begin
+      array.each_with_object({}) { |str, hsh| hsh[str] = Geokit::Geocoders::GoogleGeocoder.geocode str + ", airport" }
+    rescue
+      return 'error'
+    end
   end
 end
