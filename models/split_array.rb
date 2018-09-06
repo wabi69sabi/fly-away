@@ -4,7 +4,13 @@ class Split
     o = [a.first]
 
     until o.flatten.last == input.last
-      a = split_em(a.last)
+
+      if a.flatten.count(a.flatten.max) > 1
+        a.delete(a.first)
+        a = split_em(a.flatten)
+      else
+        a = split_em(a.last)
+      end
       o << a.first
     end
 
