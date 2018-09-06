@@ -38,26 +38,10 @@ RSpecs can be run with this command:
 
 It is possible to send JSON requests to various endpoints. One example that can be tested with curl:
 
-*** Currently not working, needs fixing ***
+A call that will return some Google maps API data is:
 
-- ``` curl --data "input=10,20,30,2,19,10,20,29" 127.0.0.1:4567/coding ```
+- ``` curl -i -H "Accept: application/json" "127.0.0.1:4567/instructions/{"port":"txl"}" ```
 
-Another on that will return some Google maps API data is:
+This will also work:
 
-- ``` curl 127.0.0.1:4567/instructions/txl%20alb ```
-
-*********************************************
-
-A request that will work is:
-
-- ``` curl -i -H "Accept: application/json" "127.0.0.1:1111/instructions/{"port":"txl"}" ```
-
-*** Needs fixing ****
-
-Currently sinatra's respond_to method does not seem to be working, so requests cannot be differentiated between HTML and JSON. This needs a solution!!!!
-
-A possible work around could be route seperation or requiring to add a .json flag to JSON calls.
-
-Another workaround would be a fancy filter and requiring to add .json flag to calls.
-
-Classes are now in the model folder, but a db with active record and SQLite would be a nice addition.
+- ``` curl -H "Accept: application/json" --data "input=10,20,30,2,19,10,40,1,10, 20, 30, 40, 5, 30, 35, 39, 4, 33,34,35,38" 127.0.0.1:4567/coding ```
