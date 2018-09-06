@@ -44,4 +44,4 @@ A call that will return some Google maps API data is:
 
 This will also work:
 
-- ``` curl -H "Accept: application/json" --data "input=10,20,30,2,19,10,40,1,10, 20, 30, 40, 5, 30, 35, 39, 4, 33,34,35,38" 127.0.0.1:4567/coding ```
+- ``` curl -H "Accept: application/json" --data "input=10,20,30,2,19,10,40,1,10,20,30,40,5,30,35,39,4,33,34,35,38" 127.0.0.1:4567/coding ```
