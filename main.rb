@@ -22,18 +22,25 @@ class App < Sinatra::Base
   end
 
   get '/instructions/:port' do
-    string = params[:port]
+    if request.accept.first.entry.include? 'json'
+      string = params[:port].split(':').last
+    else
+      string = params[:port]
+    end
 
     @new_hash = Ports.hash_ports(string.split(' ').map!{|x| x.upcase.strip})
     @distances = Ports.get_distances(@new_hash)
-    @max = @distances.max_by{|k,v| v}
+    @max = @distances.max_by{|k,v| v} unless @distances.empty?
 
     res = {'ports' => @new_hash}
     # for_json = res.to_json
 
     unless @new_hash == 'error'
-      for_json = res.to_json
-      erb :flights
+      if request.accept.first.entry.include? 'json'
+        for_json = res.to_json
+      else
+        erb :flights
+      end
     else
       erb :error
     end
