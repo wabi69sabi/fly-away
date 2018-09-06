@@ -56,10 +56,13 @@ class App < Sinatra::Base
     @res = Split.sell_coins(array)
     @split_array = Split.return_array
 
-    erb :array
+    res = {'result' => @res, 'array' => @split_array}
 
-    # res = {'result' => @res, 'array' => @split_array}
-    # for_json = res.to_json
+    if request.accept.first.entry.include? 'json'
+      res.to_json
+    else
+      erb :array
+    end
   end
 
   get '/index' do
