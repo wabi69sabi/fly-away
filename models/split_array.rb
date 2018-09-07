@@ -24,9 +24,7 @@ class Split
   end
 
   def self.return_max(totals)
-    res = []
-    totals.each {|a| res << a.max - a.min}
-    return res.max
+    (totals.each_with_object([]) {|a, ar| ar << a.max - a.min}).max
   end
 
   def self.return_array
