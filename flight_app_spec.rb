@@ -19,9 +19,16 @@ describe 'Sinatra App' do
   end
 
   context "Accepts JSON requests" do
-    it 'should take a json payload' do
+    it "should take a json payload" do
       post "/json-response", todo: { priority: 1, task: 'Get rich quick' }
       expect(last_response).to be_ok
+    end
+  end
+
+  context "Calculates the largest distance between min and max values in split array" do
+    it "should return the correct values in a hash" do
+      post "/coding", { input: '10,20,30,2,19,10,40,1,10,20,30'}
+      expect(last_response.body).to include('[[10, 20, 30, 2, 19, 10, 40], [1, 10, 20, 30]]')
     end
   end
 end
