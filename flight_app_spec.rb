@@ -27,8 +27,9 @@ describe 'Sinatra App' do
 
   context "Calculates the largest distance between min and max values in split array" do
     it "should return the correct values in a hash" do
-      post "/coding", { input: '10,20,30,2,19,10,40,1,10,20,30'}
-      expect(last_response.body).to include('[[10, 20, 30, 2, 19, 10, 40], [1, 10, 20, 30]]')
+      headers = { "HTTP_ACCEPT" => "application/json" }
+      post "/coding", { input: '10,20,30,2,19,10,40,1,10,20,30'}, headers
+      expect(last_response.body).to eq('{"result":38,"array":[[10,20,30,2,19,10,40],[1,10,20,30]]}')
     end
   end
 end
