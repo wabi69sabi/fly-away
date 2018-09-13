@@ -4,6 +4,8 @@
 
 This is a very small Sinatra application that runs with minimal overhead and connects to the Google maps API. It takes a list of airports and creates a list of all possible connecting flights between these airports with their direct distance.
 
+There is currently another unrelated coding example in this application, which I thought was nice. It can be accessed in the navbar under 'coding'.
+
 ### Requirements:
 
 In order to run this application you need a working ruby version of ruby 2.3.1 or above. Additionally:
