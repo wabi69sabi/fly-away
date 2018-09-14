@@ -21,12 +21,8 @@ class App < Sinatra::Base
     erb :instructions
   end
 
-  get '/instructions/:port' do
-    if request.accept.first.entry.include? 'json'
-      string = params[:port].split(':').last
-    else
-      string = params[:port]
-    end
+  post '/ports' do
+    string = params[:input]
 
     begin
       @new_hash = Ports.hash_ports(string.split(' ').map!{|x| x.upcase.strip})
@@ -53,6 +49,10 @@ class App < Sinatra::Base
   end
 
   post '/coding' do
+    if params[:input].empty?
+      return "Please enter some valid params"
+    end
+
     array = params['input'].split(',').map {|n| n.to_i}
 
     @res = Split.sell_coins(array)
