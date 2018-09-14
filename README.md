@@ -23,11 +23,6 @@ Pretty straight forward:
 - start the app ``` rackup -p 4567 ```
 - open a browser and go to ``` 127.0.0.1:4567 ```
 
-Alternatively, once the app has started, you can also send requests via curl or Postman to the following endpoints:
-
-- ``` 127.0.0.1:4567 ``` --> will return the landing page in raw HTML format
-- ``` 127.0.0.1:4567/instructions/<a list of airport codes seperated by %20> ``` --> returns distances between all possible airport combinations and max distance.
-
 ### Testing
 
 Currently working on unit testing. And cleaning Git history.
@@ -42,8 +37,8 @@ It is possible to send JSON requests to various endpoints.
 
 A call that will return some Google maps API data is:
 
-- ``` curl -i -H "Accept: application/json" "127.0.0.1:4567/instructions/{"port":"txl"}" ```
+- ``` curl -H "Accept: application/json" --data "input=txl nyc" 127.0.0.1:4567/ports ```
 
-This will also work:
+This call will return an array in JSON format:
 
 - ``` curl -H "Accept: application/json" --data "input=10,20,30,2,19,10,40,1,10,20,30,40,5,30,35,39,4,33,34,35,38" 127.0.0.1:4567/coding ```
