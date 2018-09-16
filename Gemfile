@@ -15,3 +15,6 @@ gem 'pry-byebug'
 
 # JSON support
 gem 'json'
+
+# additional requirements:
+gem 'rspec'
