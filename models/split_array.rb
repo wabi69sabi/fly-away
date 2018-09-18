@@ -4,7 +4,6 @@ class Split
     o = [a.first]
 
     until o.flatten.last == input.last
-
       if a.flatten.count(a.flatten.max) > 1
         a.delete(a.first)
         a = split_em(a.flatten)
@@ -14,7 +13,6 @@ class Split
       o << a.first
     end
 
-    # just to see the created split array uncomment next line
     @split_array = o
     return_max(o)
   end
