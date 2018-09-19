@@ -23,6 +23,10 @@ Pretty straight forward:
 - start the app ``` rackup -p 4567 ```
 - open a browser and go to ``` 127.0.0.1:4567 ```
 
+Alternatively, runnning the app can also be done by just typing:
+
+- ``` rake ```
+
 ### Testing
 
 Currently working on unit testing. And cleaning Git history.
@@ -30,6 +34,10 @@ Currently working on unit testing. And cleaning Git history.
 RSpecs can be run with this command:
 
 - ``` rspec -I . flight_app_spec.rb ```
+
+Or, by using rake:
+
+- ``` rake test ```
 
 ### Sending JSON requests
 
