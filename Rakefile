@@ -1,4 +1,9 @@
+require 'bundler'
+Bundler.require
+
 require 'rake'
+require './main.rb'
+require 'sinatra/activerecord/rake'
 
 desc 'run the application'
 task :default do

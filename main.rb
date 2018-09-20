@@ -13,6 +13,8 @@ class App < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     $logger = Logger.new(STDOUT)
+    set :database_file, 'config/database.yml'
+    set :database, 'sqlite3:db/database.db'
   end
 
   get '/' do
