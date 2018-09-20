@@ -1,4 +1,5 @@
 require 'erb'
+require 'logger'
 
 Geokit::Geocoders::GoogleGeocoder.api_key = ''
 
@@ -11,6 +12,7 @@ class App < Sinatra::Base
 
   configure :development do
     register Sinatra::Reloader
+    $logger = Logger.new(STDOUT)
   end
 
   get '/' do
