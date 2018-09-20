@@ -23,7 +23,7 @@ Pretty straight forward:
 - start the app ``` rackup -p 4567 ```
 - open a browser and go to ``` 127.0.0.1:4567 ```
 
-Alternatively, runnning the app can also be done by just typing:
+Alternatively, running the app can also be done by just typing:
 
 - ``` rake ```
 
