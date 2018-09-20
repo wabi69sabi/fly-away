@@ -9,12 +9,24 @@ gem 'sinatra-contrib', require: 'sinatra/reloader'
 gem 'geokit'
 
 # for unit testing
-gem 'rspec'
-gem 'rack-test'
-gem 'pry-byebug'
+group :development, :test do
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'pry-byebug'
+end
 
 # JSON support
 gem 'json'
 
+# Database set up
+gem 'activerecord'
+gem 'sinatra-activerecord'
+
 # additional requirements:
-gem 'rspec'
+gem 'rake'
+gem 'logger'
+
+group :development do
+  gem 'tux'
+  gem 'sqlite3'
+end
