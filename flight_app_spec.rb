@@ -32,4 +32,14 @@ describe 'Sinatra App' do
       expect(last_response.body).to eq('{"result":38,"array":[[10,20,30,2,19,10,40],[1,10,20,30]]}')
     end
   end
+
+  context "Basic CRUD tests for ActiveRecord in Sinatra" do
+    it "creates a new Query object as long as db has been created" do
+      Query.delete_all
+      query = Query.new
+      query.input = "This is a unit test"
+      query.save
+      expect(query).to be_valid
+    end
+  end
 end
