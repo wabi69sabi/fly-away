@@ -94,4 +94,8 @@ class App < Sinatra::Base
   get '/json/:ports' do
     params[:ports].split(' ').map! {|p| p + ' airport'}.to_json
   end
+
+  get '/logs' do
+    erb :logs
+  end
 end
