@@ -41,5 +41,11 @@ describe 'Sinatra App' do
       query.save
       expect(query).to be_valid
     end
+
+    it "creates a new ManualLog object" do
+      ManualLog.delete_all
+      log = ManualLog.create(request: 'test request')
+      expect(ManualLog.count).to eq 1
+    end
   end
 end
