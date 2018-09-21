@@ -1,0 +1,26 @@
+<h1>Active Record based db manipulation in Sinatra</h1>
+
+<p>This is a basic route to log simple queries and requests in Sinatra and display them in the browser.</p>
+
+<h4>Instructions/Tips and tricks</h4>
+
+<p>The table of queries on this page can be manipulated by passing params in the address bar.</p>
+<p>Creating a new query can be done by adding '?input=new%20string'</p>
+<p>Deleting an existing entry is achieved by adding '?delete=ID', where 'ID' is the ID of the entry you want to delete</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Index Nr.</th>
+      <th>Query</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @queries.each do |q| %>
+      <tr>
+        <td><%= q.id %></td>
+        <td><%= q.input %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
