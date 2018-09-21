@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_065736) do
+ActiveRecord::Schema.define(version: 2018_09_21_184252) do
+
+  create_table "manual_logs", force: :cascade do |t|
+    t.string "request", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "queries", force: :cascade do |t|
     t.string "input", default: "", null: false
