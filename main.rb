@@ -13,6 +13,8 @@ class App < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     $logger = Logger.new(STDOUT)
+    set :database_file, 'config/database.yml'
+    set :database, 'sqlite3:db/database.db'
   end
 
   get '/' do
@@ -67,6 +69,17 @@ class App < Sinatra::Base
     else
       erb :array
     end
+  end
+
+  get '/queries' do
+    Query.create(input: params[:input]) unless params[:input].nil?
+    begin
+      Query.destroy(params[:delete]) unless params[:delete].nil?
+    rescue
+      return 'bad ID'
+    end
+    @queries = Query.all
+    erb :queries
   end
 
   get '/index' do
