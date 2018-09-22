@@ -18,14 +18,17 @@ class App < Sinatra::Base
   end
 
   get '/' do
+    Request.log_this_request(env)
     erb :root
   end
 
   get '/instructions' do
+    Request.log_this_request(env)
     erb :instructions
   end
 
   post '/ports' do
+    Request.log_this_request(env)
     string = params[:input]
 
     begin
@@ -49,10 +52,12 @@ class App < Sinatra::Base
   end
 
   get '/coding' do
+    Request.log_this_request(env)
     erb :coding
   end
 
   post '/coding' do
+    Request.log_this_request(env) unless env['HTTP_COOKIE'].empty?
     if params[:input].empty?
       return "Please enter some valid params"
     end
@@ -72,6 +77,7 @@ class App < Sinatra::Base
   end
 
   get '/queries' do
+    Request.log_this_request(env)
     Query.create(input: params[:input]) unless params[:input].nil?
     begin
       Query.destroy(params[:delete]) unless params[:delete].nil?
@@ -83,6 +89,7 @@ class App < Sinatra::Base
   end
 
   get '/index' do
+    Request.log_this_request(env)
     @ind = 'index of pages'
     erb :index
   end
@@ -93,5 +100,16 @@ class App < Sinatra::Base
 
   get '/json/:ports' do
     params[:ports].split(' ').map! {|p| p + ' airport'}.to_json
+  end
+
+  get '/logs' do
+    Request.log_this_request(env)
+    erb :logs
+  end
+
+  post '/logs' do
+    ManualLog.delete_all
+    Request.log_this_request(env)
+    redirect '/logs'
   end
 end

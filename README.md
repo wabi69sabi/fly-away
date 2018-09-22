@@ -20,6 +20,7 @@ Pretty straight forward:
 - run bundler ``` cd fly-away && bundle install ``` or ``` bundle ``` (whichever you prefer)
 - IMPORTANT open 'main.rb' and add your Google Maps API key (which is not free anymore...since mid June 2018) on line 5
   * ``` Geokit::Geocoders::GoogleGeocoder.api_key = '<YOUR API KEY>' ```
+- setup the database ``` rake setup ```
 - start the app ``` rackup -p 4567 ```
 - open a browser and go to ``` 127.0.0.1:4567 ```
 
