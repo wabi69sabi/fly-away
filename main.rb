@@ -28,7 +28,7 @@ class App < Sinatra::Base
   end
 
   post '/ports' do
-    Request.log_this_request(env)
+    Request.log_this_request(env) unless env['HTTP_USER_AGENT'].nil?
     string = params[:input]
 
     begin
@@ -57,7 +57,7 @@ class App < Sinatra::Base
   end
 
   post '/coding' do
-    Request.log_this_request(env) unless env['HTTP_COOKIE'].empty?
+    Request.log_this_request(env) unless env['HTTP_USER_AGENT'].nil?
     if params[:input].empty?
       return "Please enter some valid params"
     end
