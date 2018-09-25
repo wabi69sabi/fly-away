@@ -25,6 +25,7 @@ gem 'sinatra-activerecord'
 # additional requirements:
 gem 'rake'
 gem 'logger'
+gem 'require_all'
 
 group :development do
   gem 'tux'
