@@ -32,7 +32,7 @@ Alternatively, running the app can also be done by just typing:
 
 RSpecs can be run with this command:
 
-- ``` rspec ````
+- ``` rspec ```
 
 ### Sending JSON requests
 
