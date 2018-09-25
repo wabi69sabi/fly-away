@@ -3,11 +3,11 @@ require 'logger'
 
 Geokit::Geocoders::GoogleGeocoder.api_key = ''
 
-class App < Sinatra::Base
+class ApplicationController < Sinatra::Base
 
   configure do
-    # redundant as this is the default, done for demonstration
-    set(:css_dir) { File.join(root, 'public') }
+    set :public_dir, "public"
+    set :views, "app/views"
   end
 
   configure :development do

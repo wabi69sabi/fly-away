@@ -2,7 +2,7 @@ require 'rack/test'
 require 'spec_helper'
 
 describe 'Sinatra App' do
-  let(:app) { App.new }
+  let(:app) { ApplicationController.new }
 
   context "GET to /" do
     it "displays home page" do
