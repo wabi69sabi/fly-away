@@ -1,7 +1,3 @@
-require 'bundler'
-Bundler.require
-# we are going to add more file structure in here
-Dir.glob("./{models}/*.rb") { |file| require file }
-require './main'
+require_relative './config/environment'
 
-run App
+run ApplicationController

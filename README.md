@@ -4,7 +4,7 @@
 
 This is a very small Sinatra application that runs with minimal overhead and connects to the Google maps API. It takes a list of airports and creates a list of all possible connecting flights between these airports with their direct distance.
 
-There is currently another unrelated coding example in this application, which I thought was nice. It can be accessed in the navbar under 'coding'.
+There are currently three additional, unrelated coding example in this application, which I thought were nice. They can be accessed in the navbar under 'coding'.
 
 ### Requirements:
 
@@ -18,7 +18,7 @@ Pretty straight forward:
 
 - clone the repo ``` git clone git@github.com:wabi69sabi/fly-away.git ```
 - run bundler ``` cd fly-away && bundle install ``` or ``` bundle ``` (whichever you prefer)
-- IMPORTANT open 'main.rb' and add your Google Maps API key (which is not free anymore...since mid June 2018) on line 5
+- IMPORTANT open './app/controllers/application_controller.rb' and add your Google Maps API key (which is not free anymore...since mid June 2018) on line 5
   * ``` Geokit::Geocoders::GoogleGeocoder.api_key = '<YOUR API KEY>' ```
 - setup the database ``` rake setup ```
 - start the app ``` rackup -p 4567 ```
@@ -30,15 +30,9 @@ Alternatively, running the app can also be done by just typing:
 
 ### Testing
 
-Currently working on unit testing. And cleaning Git history.
-
 RSpecs can be run with this command:
 
-- ``` rspec -I . flight_app_spec.rb ```
-
-Or, by using rake:
-
-- ``` rake test ```
+- ``` rspec ````
 
 ### Sending JSON requests
 
