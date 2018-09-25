@@ -36,9 +36,7 @@ describe 'Sinatra App' do
   context "Basic CRUD tests for ActiveRecord in Sinatra" do
     it "creates a new Query object as long as db has been created" do
       Query.delete_all
-      query = Query.new
-      query.input = "This is a unit test"
-      query.save
+      query = Query.create(input: "This is a unit test")
       expect(query).to be_valid
     end
 
