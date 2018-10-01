@@ -24,3 +24,7 @@ footer {
 form {
   padding-bottom: 20px;
 }
+
+.array-form label {
+  padding-left: 0.4em;
+}
