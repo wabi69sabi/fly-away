@@ -2,7 +2,15 @@ class FastArray
   def self.get_highest_value(array)
     @diff = []
     array.each_with_index do |value, index|
-      # needs a nested loop here
+      next if index == 0
+      array[0..index - 1].each do |closing_value|
+        @diff.push(value - closing_value)
+      end
     end
+    @diff.max
+  end
+
+  def self.return_array
+    return @diff
   end
 end
