@@ -64,8 +64,16 @@ class ApplicationController < Sinatra::Base
 
     array = params['input'].split(',').map {|n| n.to_i}
 
-    @res = Split.sell_coins(array)
+    bench = Benchmark.measure do
+      @res = Split.sell_coins(array)
+    end
+
     @split_array = Split.return_array
+
+    if params[:benchmark] == 'on'
+      @benchmark = bench
+      @alternative = Benchmark.measure {FastArray.get_highest_value(array)}
+    end
 
     res = {'result' => @res, 'array' => @split_array}
 
