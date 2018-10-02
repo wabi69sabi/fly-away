@@ -5,3 +5,17 @@
 <p>The original split array is:</p>
 
 <p><%= @split_array %></p>
+
+<% if @benchmark %>
+  <p>Your computation time was: <%= @benchmark.real %></p>
+  <p>The same array executed witht this code snippet did result in this computation time:
+    <%= @alternative.real%>
+  </p>
+
+  <p>Code Example B:</p>
+  <br>
+  <div class="container">
+    <img src="alternativeCode.png">
+  </div>
+  <br>
+<% end %>
