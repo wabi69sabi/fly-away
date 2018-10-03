@@ -6,6 +6,8 @@ This is a very small Sinatra application that runs with minimal overhead and con
 
 There are currently three additional, unrelated coding example in this application, which I thought were nice. They can be accessed in the navbar under 'coding'.
 
+In the 'coding' section of the app, there is currently one example that can be run with benchmarks. This is interesting as it will return the computed time in milliseconds. Shorter arrays tend to run faster witht he version 'B' of this example, while bigger arrays are calculated faster with version 'A'. Give it a try!
+
 ### Requirements:
 
 In order to run this application you need a working ruby version of ruby 2.3.1 or above. Additionally:
