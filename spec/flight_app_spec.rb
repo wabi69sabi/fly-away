@@ -33,6 +33,14 @@ describe 'Sinatra App' do
     end
   end
 
+  context "Calculates the largest possible profit in an array of sale values" do
+    array = [10,20,30,2,19,10,40,1,10,20,30]
+    let(:res) { FastArray.get_highest_value(array) }
+    it "should return the correct value, which is" do
+      expect(res).to eq(38)
+    end
+  end
+
   context "Basic CRUD tests for ActiveRecord in Sinatra" do
     it "creates a new Query object as long as db has been created" do
       Query.delete_all
