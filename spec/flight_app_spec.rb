@@ -52,4 +52,11 @@ describe 'Sinatra App' do
       expect(ManualLog.count).to eq 1
     end
   end
+
+  context "The  SpiralMatrix class" do
+    it "spirals a matrix" do
+      matrix = [[1,2,3],[4,5,6],[7,8,9]]
+      expect(SpiralMatrix.spiral(matrix)).to eq([1,2,3,6,9,8,7,4,5])
+    end
+  end
 end
