@@ -31,12 +31,10 @@ describe 'Sinatra App' do
       post "/coding", { input: '10,20,30,2,19,10,40,1,10,20,30'}, headers
       expect(last_response.body).to eq('{"result":38,"array":[[10,20,30,2,19,10,40],[1,10,20,30]]}')
     end
-  end
 
-  context "Calculates the largest possible profit in an array of sale values" do
     array = [10,20,30,2,19,10,40,1,10,20,30]
     let(:res) { FastArray.get_highest_value(array) }
-    it "should return the correct value, which is" do
+    it "should return the correct value, which is 38" do
       expect(res).to eq(38)
     end
   end
