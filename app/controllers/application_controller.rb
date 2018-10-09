@@ -120,4 +120,16 @@ class ApplicationController < Sinatra::Base
     Request.log_this_request(env)
     redirect '/logs'
   end
+
+  post '/spiral' do
+    array = params[:matrix].split(',').map! {|i| i.to_i}
+
+    if array.count % 3 == 0
+      matrix = array.each_slice(3).to_a
+    else
+      return 'input array has to be divisible by 3'
+    end
+
+    SpiralMatrix.spiral(matrix).to_json
+  end
 end
