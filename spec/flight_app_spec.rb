@@ -58,5 +58,10 @@ describe 'Sinatra App' do
       matrix = [[1,2,3],[4,5,6],[7,8,9]]
       expect(SpiralMatrix.spiral(matrix)).to eq([1,2,3,6,9,8,7,4,5])
     end
+
+    it "accepts a json call and returns a nice spiraled matrix" do
+      post "/spiral", { matrix: '1,2,3,4,5,6,7,8,9' }
+      expect(last_response.body).to eq("[1,2,3,6,9,8,7,4,5]")
+    end
   end
 end
