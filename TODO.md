@@ -11,3 +11,5 @@ The coding sub-section could be expanded by a few examples.
 An interesting coding challenge is the spiral matrix. It's been added as class and the test runs fine, but there is no visual implementation yet.
 
 There is a working JSON call to the spiral method.
+
+Another coding example could be a nested loop that determines possible score combinations of full integers.
