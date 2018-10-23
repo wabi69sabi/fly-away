@@ -121,6 +121,10 @@ class ApplicationController < Sinatra::Base
     redirect '/logs'
   end
 
+  get '/spiral' do
+    erb :spiral
+  end
+
   post '/spiral' do
     array = params[:matrix].split(',').map! {|i| i.to_i}
 
