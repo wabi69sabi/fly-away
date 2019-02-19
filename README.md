@@ -38,7 +38,7 @@ RSpecs can be run with this command:
 
 ** CAUTION **
 
-If buyebug breaks the Sinatra server, try noy using it.
+If byebug breaks the Sinatra server, try not using it.
 
 ### Sending JSON requests
 
