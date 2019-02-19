@@ -36,6 +36,10 @@ RSpecs can be run with this command:
 
 - ``` rspec ```
 
+** CAUTION **
+
+If buyebug breaks the Sinatra server, try noy using it.
+
 ### Sending JSON requests
 
 It is possible to send JSON requests to various endpoints.

@@ -12,7 +12,7 @@ gem 'geokit'
 group :development, :test do
   gem 'rspec'
   gem 'rack-test'
-  gem 'pry-byebug'
+  # gem 'pry-byebug'
 end
 
 # JSON support
