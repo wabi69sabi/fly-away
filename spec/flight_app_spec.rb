@@ -2,6 +2,8 @@ require 'rack/test'
 require 'spec_helper'
 
 describe 'Sinatra App' do
+  # we need to create one ApplicationController object instance
+  # to have a response we can test
   let(:app) { ApplicationController.new }
 
   context "GET to /" do
